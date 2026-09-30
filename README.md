@@ -1,105 +1,51 @@
-cf-simplify (Codeforces Simplify)
+# **cf-simplify (Codeforces Simplify)**
 
-cf-simplify is a comprehensive toolset and browser extension designed to simplify, enhance, and manage Codeforces competitive programming problems. By leveraging a Python-based pipeline with LLM integration, it processes problem statements and serves them cleanly through a cross-browser extension equipped with MathJax rendering and hint-term definitions.
+**cf-simplify** is an LLM-powered browser extension and Python pipeline that simplifies complex Codeforces problem statements, helping you focus on solving the logic rather than decoding the question[cite: 1].
 
-Features
+## **Key Features**
+* **Browser Extension Integration:** Native support for Chromium-based browsers (Chrome, Edge, Brave) and Firefox[cite: 1].
+* **LLM-Powered Simplification:** A dedicated Python builder pipeline that extracts, processes, and rewrites verbose problem statements using Large Language Models[cite: 1].
+* **Seamless MathJax Rendering:** Contains a dedicated bridge to ensure complex mathematical equations render perfectly within the injected extension interface[cite: 1].
+* **Pre-built Problem Library:** Caches simplified problems (e.g., Problem 1A, 4A) in a structured JSON database for instantaneous access without real-time generation delays[cite: 1].
+* **Inline Hint Terms:** Built-in dictionaries that provide immediate definitions for common competitive programming terminology directly on the page[cite: 1].
 
-Browser Extension: Available for Chromium-based browsers and Firefox to seamlessly integrate into your Codeforces workflow.
+## **Installation Guide**
+You can manually install the extension directly from the `cf-simplify/extension/` directory[cite: 1].
 
-LLM-Powered Simplification: Uses an automated Python builder to extract and simplify complex problem statements using Large Language Models.
+### **Chrome, Edge, and Brave**
+1. Clone or download this repository to your local computer.
+2. Open your browser and navigate to the extensions management page (e.g., `chrome://extensions/` or `edge://extensions/`).
+3. Toggle **Developer mode** on (typically located in the top right corner).
+4. Click **Load unpacked** and select the `cf-simplify/extension/` folder[cite: 1].
+5. The extension is now active. Click the extension icon to access the options panel and customize your settings[cite: 1].
 
-MathJax Support: Ensures all complex mathematical equations in problem statements are rendered flawlessly via a dedicated MathJax bridge.
+### **Mozilla Firefox**
+1. Clone or download this repository.
+2. Navigate to `about:debugging#/runtime/this-firefox` in your Firefox address bar.
+3. Click the **Load Temporary Add-on...** button.
+4. Select the `manifest.json` file located inside the `cf-simplify/extension/` folder[cite: 1].
 
-Pre-built Problem Library: Caches simplified problems (e.g., Problem 1A, 4A) in a structured JSON library for fast access.
+## **Project Architecture**
+This repository is divided into three primary components[cite: 1]:
 
-Hint Terms: Built-in dictionaries to explain common competitive programming terminology directly in the browser.
+### **1. The Browser Extension (`cf-simplify/extension/`)**
+The frontend user interface that interacts directly with the Codeforces website[cite: 1].
+* **`manifest.json` & `background.js`:** Core browser configurations and background state management[cite: 1].
+* **`content/`:** Scripts (`content.js`, `content.css`) and rendering tools (`render.js`, `mathjax-bridge.js`) injected into Codeforces problem pages[cite: 1].
+* **`shared/`:** Shared logic (`checks.js`, `providers.js`) and terminology dictionaries (`hint-terms.json`)[cite: 1].
+* **`options/`:** Settings menu interface files (`options.html`, `options.css`, `options.js`)[cite: 1].
+* **`icons/`:** UI assets provided in various resolutions (16px, 32px, 48px, 128px)[cite: 1].
 
-Installation Guide for Browsers
+### **2. The Python Builder (`cf-simplify/builder/`)**
+The backend pipeline that automates problem extraction and LLM interaction[cite: 1].
+* **`build.py` & `requirements.txt`:** The main execution script and its required Python dependencies[cite: 1].
+* **`cfsimplify/` Module:** Modular Python scripts (`codeforces.py`, `extract.py`, `llm.py`, `pipeline.py`, `library.py`) that handle Codeforces HTML scraping, text extraction, API prompting, validation, and saving[cite: 1].
 
-You can manually install the cf-simplify extension on any major browser using the files located in the cf-simplify/extension/ directory.
+### **3. The Problem Library (`cf-simplify/library/`)**
+A cached JSON database of processed problem statements[cite: 1].
+* **`index.json`:** The master mapping file for all simplified problems[cite: 1].
+* **`problems/`:** Directory storing the final simplified JSON outputs categorized by contest ID (e.g., `1/A.json`, `4/A.json`)[cite: 1].
 
-Google Chrome, Microsoft Edge, and Brave
-
-Download or clone this repository to your local machine.
-
-Open your browser and navigate to the extensions management page:
-
-Chrome: chrome://extensions/
-
-Edge: edge://extensions/
-
-Brave: brave://extensions/
-
-Enable Developer mode (usually a toggle in the top right corner).
-
-Click the Load unpacked button.
-
-Select the cf-simplify/extension/ folder from the cloned repository.
-
-The extension is now installed and can be configured by clicking its icon to access the options page.
-
-Mozilla Firefox
-
-Download or clone this repository to your local machine.
-
-Open Firefox and navigate to about:debugging#/runtime/this-firefox.
-
-Click the Load Temporary Add-on... button.
-
-Navigate to the cloned repository, open the cf-simplify/extension/ folder, and select the manifest.json file.
-
-The extension will remain active until you restart Firefox.
-
-Project Architecture & Directory Structure
-
-The project is divided into three main ecosystems: the browser extension, the Python builder pipeline, and the problem library.
-
-1. The Browser Extension (cf-simplify/extension/)
-
-This is the user-facing frontend that interacts with the Codeforces website.
-
-manifest.json: The core configuration file required by browsers to load the extension.
-
-background.js: Runs in the background to handle extension events and state management.
-
-content/: Scripts injected directly into Codeforces pages. content.js and content.css modify the page structure, while render.js and mathjax-bridge.js handle the rendering of simplified text and mathematical formulas.
-
-shared/: Contains core logic shared across the extension, including checks.js, providers.js, and hint-terms.json (which provides definitions for specific competitive programming terms).
-
-options/: Contains the HTML, CSS, and JS files for the extension's user settings menu.
-
-icons/: UI assets in various sizes (16px, 32px, 48px, 128px).
-
-2. The Python Builder (cf-simplify/builder/)
-
-This backend pipeline automates the fetching and processing of Codeforces problems.
-
-requirements.txt: Lists the Python dependencies required to run the builder.
-
-build.py: The main execution script to trigger the pipeline.
-
-cfsimplify/ module:
-
-codeforces.py: Handles API interactions and web scraping specific to Codeforces.
-
-extract.py: Parses the raw HTML and text from the fetched problems.
-
-llm.py: Interfaces with Large Language Models to rewrite and simplify the extracted problem statements.
-
-pipeline.py & state.py: Manages the workflow and state of the generation process.
-
-checks.py & library.py: Validates the output and formats it for storage.
-
-3. The Library (cf-simplify/library/)
-
-A structured database of pre-processed problems consumed by the extension.
-
-index.json: The master index mapping problem IDs to their simplified files.
-
-problems/: Contains the simplified output files categorized by contest and problem ID (e.g., 1/A.json, 4/A.json).
-
-4. Tests & CI/CD
-
-cf-simplify/tests/: Contains comprehensive test suites. The js/ folder includes tests for the extension's rendering, options, and background scripts, while the python/ folder contains end-to-end (test_e2e.py) and core pipeline tests (test_core.py). It also includes HTML fixtures of modern and old Codeforces problems to ensure the extraction works perfectly.
-
-.github/workflows/: Contains GitHub Actions (publish-library.yml and update-library.yml) to automatically process new Codeforces problems and publish the updated library database.
+## **Testing and Automation**
+* **Comprehensive Tests (`cf-simplify/tests/`):** Features exhaustive test suites. The `js/` directory includes Mocha/Jest-style tests for extension components (`background.test.mjs`, `render.test.mjs`), while the `python/` directory contains core logic and end-to-end tests (`test_core.py`, `test_e2e.py`) using provided HTML fixtures[cite: 1].
+* **GitHub Actions (`.github/workflows/`):** Automated CI/CD workflows (`update-library.yml`, `publish-library.yml`) designed to periodically fetch new Codeforces problems, process them, and update the repository library automatically[cite: 1].
