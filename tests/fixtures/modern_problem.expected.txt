@@ -1,0 +1,31 @@
+[B] Lantern Festival
+The town of Lumenfield is preparing its yearly lantern festival. Mayor Aldo has placed $n$ lanterns in a row; the $i$-th lantern has brightness $a_i$.
+
+In one operation, the mayor may choose an index $i$ ($1 \le i < n$) and swap lanterns $i$ and $i+1$. He wants the brightnesses to be non-decreasing from left to right, because the festival committee said:
+
+- a row that gets darker looks sad;
+- every lantern must stay lit.
+
+The total brightness is
+
+$$S = \sum_{i=1}^{n} a_i.$$
+
+Find the minimum number of operations the mayor needs.
+
+### Input
+
+The first line contains a single integer $t$ ($1 \le t \le 10^4$) — the number of test cases.
+
+The first line of each test case contains a single integer $n$ ($1 \le n \le 2 \cdot 10^5$).
+
+The second line of each test case contains $n$ integers $a_1, a_2, \ldots, a_n$ ($1 \le a_i \le 10^9$).
+
+It is guaranteed that the sum of $n$ over all test cases does not exceed $2 \cdot 10^5$.
+
+### Output
+
+For each test case, print a single integer — the minimum number of operations.
+
+### Note
+
+In the first test case, the mayor can swap lanterns $1$ and $2$, then $2$ and $3$; the total brightness stays $12345$.

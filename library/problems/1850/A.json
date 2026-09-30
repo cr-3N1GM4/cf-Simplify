@@ -1,0 +1,13 @@
+{
+  "id": "1850A",
+  "contestId": 1850,
+  "index": "A",
+  "name": "To My Critics",
+  "simplified": "## Task\nFor each test case, decide whether any two of the three given digits have a sum greater than or equal to $10$.\n\n## Details\n- A pair consists of two different positions among the three digits.\n- Output \"`YES`\" if such a pair exists, otherwise output \"`NO`\".\n- The answer may be printed in any letter case.\n\n## Input\n- The first line contains an integer $t$ ($1 \\le t \\le 1000$) — the number of test cases.  \n- Each of the next $t$ lines contains three integers $a$, $b$, $c$ ($0 \\le a, b, c \\le 9$).\n\n## Output\n- For each test case, output a line with \"`YES`\" if there exists a pair of distinct digits whose sum is at least $10$, otherwise output \"`NO`\".",
+  "warnings": [],
+  "model": "openai/gpt-oss-120b",
+  "provider": "groq",
+  "promptVersion": 1,
+  "sourceHash": "641817b7838661bfb948",
+  "createdAt": "2026-09-25T09:04:32Z"
+}

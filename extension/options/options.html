@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CF Simplify settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main class="page">
+    <header class="masthead">
+      <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <div>
+        <h1>CF Simplify</h1>
+        <p class="lede">Shows Codeforces problems as short, formal statements of what to compute, without hints. It pauses itself while a contest is running, as Codeforces rules require.</p>
+      </div>
+    </header>
+
+    <form id="settings" novalidate>
+      <section>
+        <h2>Shared library</h2>
+        <p class="help">Ready-made simplifications that anyone can use for free. Leave the address empty to use the one built into this copy of the extension.</p>
+        <label for="libraryUrl">Library address</label>
+        <input id="libraryUrl" type="url" spellcheck="false" autocomplete="off">
+        <div class="row">
+          <button type="button" id="checkLibrary" class="secondary">Check library</button>
+          <span id="libraryStatus" class="status" role="status"></span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Your own API key</h2>
+        <p class="help">Optional. Used only for problems that are not in the shared library yet. The key stays on this computer and is sent only to the provider you choose.</p>
+        <label for="provider">Provider</label>
+        <select id="provider"></select>
+
+        <div id="providerFields">
+          <div class="field" id="keyField">
+            <label for="apiKey">API key</label>
+            <input id="apiKey" type="password" spellcheck="false" autocomplete="off">
+            <p class="help" id="keyHelp"></p>
+          </div>
+          <div class="field" id="baseUrlField">
+            <label for="baseUrl">Base URL</label>
+            <input id="baseUrl" type="url" spellcheck="false" autocomplete="off">
+            <p class="help">The address that ends just before <code>/chat/completions</code>.</p>
+          </div>
+          <div class="field">
+            <label for="model">Model</label>
+            <input id="model" type="text" spellcheck="false" autocomplete="off">
+            <p class="help" id="modelHelp"></p>
+          </div>
+          <div class="row">
+            <button type="button" id="testKey" class="secondary">Test connection</button>
+            <span id="keyStatus" class="status" role="status"></span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Preferences</h2>
+        <fieldset>
+          <legend>When a problem is not in the library and a key is set</legend>
+          <label class="choice"><input type="radio" name="autoConvert" value="yes"> Simplify it right away</label>
+          <label class="choice"><input type="radio" name="autoConvert" value="no"> Show a button and wait for me</label>
+        </fieldset>
+        <fieldset>
+          <legend>Show first</legend>
+          <label class="choice"><input type="radio" name="defaultView" value="simplified"> Simplified statement</label>
+          <label class="choice"><input type="radio" name="defaultView" value="original"> Original statement</label>
+        </fieldset>
+      </section>
+
+      <div class="actions">
+        <button type="submit" class="primary">Save changes</button>
+        <span id="saveStatus" class="status" role="status"></span>
+      </div>
+    </form>
+
+    <section class="stored">
+      <h2>Saved on this computer</h2>
+      <p class="help" id="cacheInfo">Counting…</p>
+      <button type="button" id="clearCache" class="secondary">Clear saved simplifications</button>
+    </section>
+  </main>
+  <script src="../shared/providers.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

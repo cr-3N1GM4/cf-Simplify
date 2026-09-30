@@ -1,0 +1,29 @@
+{
+  "about": "Words that tend to leak a solution idea. A term is flagged only when it appears in the rewrite but NOT anywhere in the original statement. Used by both the library builder (Python) and the extension (JavaScript). Add or remove terms freely.",
+  "terms": [
+    "algorithm", "approach", "complexity", "efficient", "efficiently", "optimal strategy", "strategy", "observe",
+    "observation", "notice", "note that", "key insight", "insight", "hint", "trick", "it suffices", "suffices",
+    "sufficient to", "it is enough", "enough to check", "equivalent to", "equivalently", "reduces to", "reduce to",
+    "boils down", "can be solved", "solution approach", "you can use", "you should use", "we can use", "one can use",
+    "therefore", "hence", "thus", "which means", "this means", "it follows", "implies", "obviously", "clearly",
+    "trivially", "lemma", "proof", "always possible", "never possible", "is always", "is never", "upper bound",
+    "lower bound", "monotonic", "monotone", "symmetry", "periodic", "dynamic programming", "dp", "memoization",
+    "memoize", "greedy", "greedily", "binary search", "ternary search", "two pointers", "two-pointer", "sliding window",
+    "prefix sum", "suffix sum", "difference array", "segment tree", "fenwick", "binary indexed tree", "sparse table",
+    "union-find", "union find", "disjoint set", "dsu", "dijkstra", "bellman-ford", "floyd", "bfs", "dfs", "breadth-first",
+    "depth-first", "topological", "shortest path", "connected component", "bipartite", "matching", "max flow",
+    "maximum flow", "network flow", "min cut", "minimum cut", "kruskal", "spanning tree", "lowest common ancestor",
+    "lca", "binary lifting", "heavy-light", "centroid", "hash", "hashing", "rolling hash", "kmp", "z-function",
+    "suffix array", "suffix automaton", "trie", "bitmask", "bit manipulation", "sieve", "modular inverse",
+    "fermat", "chinese remainder", "euler", "inclusion-exclusion", "meet in the middle", "divide and conquer",
+    "sweep line", "convex hull", "stack", "queue", "deque", "priority queue", "heap", "brute force", "brute-force",
+    "backtracking", "pigeonhole", "invariant", "parity", "xor basis", "linear basis", "matrix exponentiation",
+    "fast exponentiation", "fft", "ntt", "grundy", "sprague", "game theory", "constructive", "combinatorics",
+    "combinatorial", "sorting", "sort the", "precompute", "precomputation", "simulate", "simulation", "does not affect",
+    "doesn't affect", "irrelevant", "does not matter", "doesn't matter", "red herring", "can be ignored", "can ignore"
+  ],
+  "patterns": [
+    "\\bO\\s*\\(",
+    "\\bn\\s*\\\\?log\\s*n\\b"
+  ]
+}

@@ -1,0 +1,21 @@
+# Your keys. Never commit this file.
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Browser profile used by the builder's optional browser mode
+builder/state/browser-profile/
+
+# Test tooling
+tests/js/node_modules/
+
+# Packaged extension zips
+*.zip
+
+# OS clutter
+.DS_Store
+Thumbs.db

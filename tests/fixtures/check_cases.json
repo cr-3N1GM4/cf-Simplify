@@ -1,0 +1,98 @@
+[
+  {
+    "name": "flags a data structure the statement never mentions",
+    "original": "Find the minimum number of swaps of adjacent elements.\n\n### Input\n\nThe first line contains $n$ ($1 \\le n \\le 2 \\cdot 10^5$).",
+    "output": "## Task\nCount pairs using a Fenwick tree.\n\n## Input\n- $n$ ($1 \\le n \\le 2 \\cdot 10^5$).\n\n## Output\n- One integer.",
+    "hints": [
+      "fenwick"
+    ],
+    "missing": [],
+    "format": []
+  },
+  {
+    "name": "does not flag words the statement itself uses",
+    "original": "You are given a stack of $n$ plates. Note that plates may be equal.\n\n### Input\n\n$n$ ($1 \\le n \\le 100$).",
+    "output": "## Task\nGiven a stack of $n$ plates. Note that plates may be equal.\n\n## Input\n- $n$ ($1 \\le n \\le 100$).\n\n## Output\n- One integer.",
+    "hints": [],
+    "missing": [],
+    "format": []
+  },
+  {
+    "name": "catches complexity notation and plural terms",
+    "original": "Answer the queries.\n\n### Input\n\n$q$ ($1 \\le q \\le 10^5$).",
+    "output": "## Task\nAnswer the queries in O(n log n) with two heaps.\n\n## Input\n- $q$ ($1 \\le q \\le 10^5$).\n\n## Output\n- Answers.",
+    "hints": [
+      "heap",
+      "O(",
+      "n log n"
+    ],
+    "missing": [],
+    "format": []
+  },
+  {
+    "name": "reports a dropped limit",
+    "original": "Story.\n\n### Input\n\n$n$ ($1 \\le n \\le 2 \\cdot 10^5$), $a_i$ ($1 \\le a_i \\le 10^9$). The sum of $n$ does not exceed $2 \\cdot 10^5$.\n\n### Output\n\nPrint the answer modulo $998244353$.",
+    "output": "## Task\nCompute it.\n\n## Input\n- $n$ ($1 \\le n \\le 2 \\cdot 10^5$), $a_i \\ge 1$; the sum of $n$ is at most $2 \\cdot 10^5$.\n\n## Output\n- The answer modulo $998244353$.",
+    "hints": [],
+    "missing": [
+      "10^9"
+    ],
+    "format": []
+  },
+  {
+    "name": "accepts equivalent ways of writing a number",
+    "original": "Story.\n\n### Input\n\n$1 \\le n \\le 200000$ and $k \\le 1{,}000{,}000$.",
+    "output": "## Task\nDo it.\n\n## Input\n- $1 \\le n \\le 2 \\times 10^{5}$, $k \\le 10^6$.\n\n## Output\n- One line.",
+    "hints": [],
+    "missing": [],
+    "format": []
+  },
+  {
+    "name": "ignores numbers in the story and the note",
+    "original": "In 2024 the kingdom had 5000 knights.\n\n### Input\n\n$n$ ($1 \\le n \\le 50$).\n\n### Note\n\nThe answer for the first test is 123456.",
+    "output": "## Task\nGiven $n$.\n\n## Input\n- $n$ ($1 \\le n \\le 50$).\n\n## Output\n- One integer.",
+    "hints": [],
+    "missing": [],
+    "format": []
+  },
+  {
+    "name": "checks the format",
+    "original": "Story.\n\n### Input\n\n$n$ ($1 \\le n \\le 50$).",
+    "output": "Given $n$ with $1 \\le n \\le 50$, print it.",
+    "hints": [],
+    "missing": [],
+    "format": [
+      "missing \"## Task\"",
+      "missing \"## Input\"/\"## Output\""
+    ]
+  },
+  {
+    "name": "accepts an interaction section instead of input and output",
+    "original": "Guess.\n\n### Interaction\n\nAt most $25$ queries, $1 \\le x \\le 10^6$.",
+    "output": "## Task\nFind the hidden $x$.\n\n## Interaction\n- $1 \\le x \\le 10^6$; at most $25$ queries.",
+    "hints": [],
+    "missing": [],
+    "format": []
+  },
+  {
+    "name": "flags reasoning words",
+    "original": "Story.\n\n### Input\n\n$n$ ($1 \\le n \\le 50$).",
+    "output": "## Task\nThe answer is always even, therefore print it.\n\n## Input\n- $n$ ($1 \\le n \\le 50$).\n\n## Output\n- One integer.",
+    "hints": [
+      "therefore",
+      "is always"
+    ],
+    "missing": [],
+    "format": []
+  },
+  {
+    "name": "flags claims that part of the statement does not matter",
+    "original": "Each lantern has a colour $c_i$ and brightness $a_i$.\n\n### Input\n\n$n$ ($1 \\le n \\le 50$).",
+    "output": "## Task\nThe colours $c_i$ are irrelevant; sum the brightness.\n\n## Input\n- $n$ ($1 \\le n \\le 50$).\n\n## Output\n- One integer.",
+    "hints": [
+      "irrelevant"
+    ],
+    "missing": [],
+    "format": []
+  }
+]

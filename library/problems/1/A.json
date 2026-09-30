@@ -1,0 +1,13 @@
+{
+  "id": "1A",
+  "contestId": 1,
+  "index": "A",
+  "name": "Theatre Square",
+  "simplified": "## Task\nFind the minimum number of square tiles of size $a \\times a$ needed to cover a rectangle of size $n \\times m$.\n\n## Details\n- Tiles may not be broken.\n- Tile sides must be parallel to the sides of the rectangle.\n- The tiles may cover more than the rectangle, but the whole rectangle must be covered.\n\n## Input\n- One line with three integers $n$, $m$ and $a$ ($1 \\le n, m, a \\le 10^9$).\n\n## Output\n- Print the minimum number of tiles.",
+  "warnings": [],
+  "model": "hand-written example",
+  "provider": "example",
+  "promptVersion": 1,
+  "sourceHash": "",
+  "createdAt": "2026-09-24T20:22:57Z"
+}

@@ -1,0 +1,9 @@
+requests>=2.31
+beautifulsoup4>=4.12
+python-dotenv>=1.0
+cryptography>=42
+
+# Optional. Only needed if Codeforces shows a browser check to the script
+# (see "Troubleshooting" in README.md):
+#   pip install playwright
+#   python -m playwright install chromium

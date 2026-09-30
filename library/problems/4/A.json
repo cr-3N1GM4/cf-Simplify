@@ -1,0 +1,13 @@
+{
+  "id": "4A",
+  "contestId": 4,
+  "index": "A",
+  "name": "Watermelon",
+  "simplified": "## Task\nGiven an integer $w$, decide whether $w$ can be split into two parts whose weights are both positive even integers.\n\n## Details\n- The two parts do not have to be equal.\n\n## Input\n- One integer $w$ ($1 \\le w \\le 100$).\n\n## Output\n- Print `YES` if such a split exists, otherwise print `NO`.",
+  "warnings": [],
+  "model": "hand-written example",
+  "provider": "example",
+  "promptVersion": 1,
+  "sourceHash": "",
+  "createdAt": "2026-09-24T20:22:57Z"
+}

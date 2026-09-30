@@ -1,0 +1,107 @@
+/* CF Simplify card, injected into Codeforces problem statements.
+   Quiet by design: it borrows the page's type and colours, and keeps one mark
+   (the three-bar Codeforces tricolour) as its only flourish. */
+.cfs-card {
+  --cfs-rule: #3b6fb6;
+  --cfs-paper: #f6f8fb;
+  --cfs-line: #d5dce6;
+  --cfs-muted: #5b6573;
+  --cfs-yellow: #f3b31b;
+  --cfs-blue: #1a7fc7;
+  --cfs-red: #d23a2e;
+  margin: 0.9em 0 1.1em;
+  border: 1px solid var(--cfs-line);
+  border-left: 3px solid var(--cfs-rule);
+  border-radius: 6px;
+  background: var(--cfs-paper);
+  font: inherit;
+  color: inherit;
+  text-align: left;
+}
+
+.cfs-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  flex-wrap: wrap;
+  padding: 0.55em 0.9em;
+  border-bottom: 1px solid var(--cfs-line);
+}
+.cfs-collapsed .cfs-bar { border-bottom: 0; }
+
+.cfs-mark {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 14px;
+  flex: none;
+}
+.cfs-mark i { display: block; height: 3px; border-radius: 1px; }
+.cfs-mark i:nth-child(1) { width: 14px; background: var(--cfs-yellow); }
+.cfs-mark i:nth-child(2) { width: 10px; background: var(--cfs-blue); }
+.cfs-mark i:nth-child(3) { width: 6px; background: var(--cfs-red); }
+.cfs-paused .cfs-mark i { background: var(--cfs-line); }
+
+.cfs-title { font-weight: bold; font-size: 1em; margin-right: auto; }
+
+.cfs-toggle { display: inline-flex; border: 1px solid var(--cfs-rule); border-radius: 5px; overflow: hidden; }
+.cfs-toggle[hidden] { display: none; }
+.cfs-toggle button {
+  font: inherit;
+  font-size: 0.85em;
+  padding: 0.25em 0.8em;
+  margin: 0;
+  border: 0;
+  background: #fff;
+  color: var(--cfs-rule);
+  cursor: pointer;
+}
+.cfs-toggle button + button { border-left: 1px solid var(--cfs-rule); }
+.cfs-toggle button[aria-pressed="true"] { background: var(--cfs-rule); color: #fff; }
+
+.cfs-body { padding: 0.6em 1em 0.8em; line-height: 1.55; }
+.cfs-body[hidden] { display: none; }
+.cfs-body p { margin: 0.45em 0; }
+.cfs-body ul, .cfs-body ol { margin: 0.35em 0 0.5em; padding-left: 1.5em; }
+.cfs-body li { margin: 0.2em 0; }
+.cfs-body code { font-family: Consolas, "Courier New", monospace; font-size: 0.95em; }
+.cfs-body pre { background: #fff; border: 1px solid var(--cfs-line); padding: 0.5em; overflow-x: auto; }
+.cfs-body .cfs-h {
+  margin: 0.8em 0 0.2em;
+  font-size: 1em;
+  font-weight: bold;
+  color: var(--cfs-rule);
+}
+.cfs-body .cfs-h:first-child { margin-top: 0.2em; }
+
+.cfs-math-display { display: block; text-align: center; margin: 0.4em 0; }
+.cfs-tex { font-family: "Times New Roman", Times, serif; font-style: italic; }
+.cfs-tex-text { font-style: normal; }
+
+.cfs-msg { color: var(--cfs-muted); }
+.cfs-note { color: var(--cfs-muted); font-size: 0.9em; border-top: 1px solid var(--cfs-line); padding-top: 0.5em; }
+.cfs-actions { display: flex; gap: 0.5em; flex-wrap: wrap; margin: 0.5em 0 0.2em; }
+.cfs-btn {
+  font: inherit;
+  font-size: 0.9em;
+  padding: 0.3em 0.9em;
+  border: 1px solid var(--cfs-rule);
+  border-radius: 5px;
+  background: #fff;
+  color: var(--cfs-rule);
+  cursor: pointer;
+}
+.cfs-btn-primary { background: var(--cfs-rule); color: #fff; }
+
+.cfs-foot {
+  padding: 0.45em 1em 0.6em;
+  border-top: 1px solid var(--cfs-line);
+  font-size: 0.85em;
+  color: var(--cfs-muted);
+}
+.cfs-foot[hidden] { display: none; }
+.cfs-foot a { margin-left: 0.4em; }
+
+.cfs-card button:focus-visible, .cfs-card a:focus-visible { outline: 2px solid var(--cfs-rule); outline-offset: 2px; }
+
+.cfs-hidden { display: none !important; }

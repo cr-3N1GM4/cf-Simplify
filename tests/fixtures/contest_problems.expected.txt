@@ -1,0 +1,19 @@
+[A] Two Piles
+Nika has two piles with $x$ and $y$ stones. She wonders whether the piles have equal size.
+
+### Input
+
+The only line contains two integers $x$ and $y$ ($0 \le x, y \le 1000$).
+
+### Output
+
+Print `YES` if $x = y$, otherwise print `NO`.
+
+=====
+
+[B] Hidden Number
+The jury has chosen a hidden integer $x$ ($1 \le x \le 10^6$). Guess it.
+
+### Interaction
+
+You may ask at most $25$ queries of the form "? $y$". The jury answers "<" if $x < y$ and ">=" otherwise. When you know $x$, print "! $x$".

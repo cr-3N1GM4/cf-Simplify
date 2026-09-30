@@ -1,0 +1,14 @@
+[C] Garden Fence
+Farmer Olga owns $n$ fence posts. The height of post $i$ is $h_{i}$. The picture below shows an example.
+
+[figure]
+
+She calls the fence tidy if no two neighbouring posts differ by more than $k$.
+
+### Input
+
+The first line contains two integers $n$ and $k$ ($1 ≤ n ≤ 1000$, $0 ≤ k ≤ 10^{9}$). The second line contains $n$ integers $h_{1}, h_{2}, ..., h_{n}$.
+
+### Output
+
+Print `YES` if the fence is tidy, and `NO` otherwise.

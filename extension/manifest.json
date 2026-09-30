@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "CF Simplify",
+  "version": "1.0.0",
+  "description": "Shows Codeforces problems as short, formal statements of what to compute. No hints. Pauses itself during live contests.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "CF Simplify settings",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://*.codeforces.com/*",
+    "https://*.github.io/*",
+    "https://cdn.jsdelivr.net/*",
+    "https://raw.githubusercontent.com/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.groq.com/*",
+    "https://openrouter.ai/*"
+  ],
+  "optional_host_permissions": ["https://*/*", "http://*/*"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.codeforces.com/problemset/problem/*",
+        "https://*.codeforces.com/problemset/gymProblem/*",
+        "https://*.codeforces.com/contest/*",
+        "https://*.codeforces.com/gym/*"
+      ],
+      "js": ["content/render.js", "content/content.js"],
+      "css": ["content/content.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://*.codeforces.com/problemset/problem/*",
+        "https://*.codeforces.com/problemset/gymProblem/*",
+        "https://*.codeforces.com/contest/*",
+        "https://*.codeforces.com/gym/*"
+      ],
+      "js": ["content/mathjax-bridge.js"],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    }
+  ]
+}
